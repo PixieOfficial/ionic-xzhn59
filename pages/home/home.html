@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>SPECIAL INSTALLMENT PLAN CALCULATOR</h2>
+  <p>
+    This Special Installment plan calculates the Total Interest Payable, Total Amount Payable, and Monthly Payment.
+  </p>
+  <p>
+  </p>
+  <br />
+  <ion-item>
+    <ion-label>Tuition Fee Amount:</ion-label>
+    <ion-input type="number" [(ngModel)]="TuitionFeeAmount"></ion-input>
+    </ion-item>
+  <ion-item>
+    <ion-label>Payment Terms:</ion-label>
+    <ion-input type="number" [(ngModel)]="PaymentTerms"></ion-input>
+    </ion-item>
+
+<button ion-button color="secondary" (click)="InstallmentPlanCalculator()">CALCULATE</button>
+  <ion-item *ngIf = "Error">
+  <p>{{PaymentTerms}} is not an option for Payment Terms, please try again.
+</p>
+  </ion-item>
+  <p>Total Interest Payable: {{TotalInterestPayable}}</p>
+<p>Total Amount Payable: {{TotalAmountPayable}}</p>
+<p>MonthlyPayment: {{MonthlyPayment}}</p>
+<ion-item>
